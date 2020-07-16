@@ -4,4 +4,4 @@
 
 |package|desc|
 |---|---|---|
-|protobuf-app| use `google.golang.org/protobuf`|~
+|protobuf-app| use `google.golang.org/protobuf`|
