@@ -100,10 +100,11 @@ func main() {
 		}
 
 		fmt.Print("bash :")
-		line, _, err := reader.ReadLine()
+		line, err := reader.ReadString('\n')
 		if err != nil {
 			logger.Panicln(err)
 		}
+		line = line[:len(line)-1]
 		msg = string(line)
 
 		if strings.ToLower(msg) == "q" || strings.ToLower(msg) == "exit" {
