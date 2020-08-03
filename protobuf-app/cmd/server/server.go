@@ -9,7 +9,6 @@ import (
 
 	"github.com/feiquan123/go-demo/protobuf-app/proto_gen"
 	"github.com/feiquan123/go-demo/protobuf-app/utils/bash"
-
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/runtime/protoimpl"
 )
