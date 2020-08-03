@@ -1,4 +1,4 @@
-module localhost.com/wirego
+module wirego
 
 go 1.14
 
