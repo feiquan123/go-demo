@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	mission, clearup ,err := InitMission("jdk", "jek", time.Now())
+	mission, clearup, err := InitMission("jdk", "jek", time.Now())
 	if err != nil {
 		log.Println(err)
 	}

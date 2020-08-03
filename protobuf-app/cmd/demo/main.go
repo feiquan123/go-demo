@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	"protobuf-app/proto_gen"
+
+	"github.com/feiquan123/go-demo/protobuf-app/proto_gen"
 
 	"google.golang.org/protobuf/proto"
 )

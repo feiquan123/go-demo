@@ -8,9 +8,10 @@ import (
 	"log"
 	"net"
 	"os"
-	"protobuf-app/proto_gen"
 	"strings"
 	"time"
+
+	"github.com/feiquan123/go-demo/protobuf-app/proto_gen"
 
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/runtime/protoimpl"

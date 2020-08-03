@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"localhost.com/go-demo/test/gogen/painkiller"
+	"github.com/feiquan123/go-demo/stringer/painkiller"
 )
 
 func main() {

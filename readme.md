@@ -1,7 +1,12 @@
-# Go-Demo
+# github.com/feiquan123/go-demo
 
 ## package
 
-|package|desc|  
-|---|---|---|  
-|protobuf-app| use `google.golang.org/protobuf`|  
+```go
+├── distribut-cache  	// 分布式缓存
+├── mock     			// mock interface test
+├── protobuf-app		// protobuf use
+├── stringer    		// stringer use
+├── terminal-input      // terminal input
+└── wire          		// wire use
+```
