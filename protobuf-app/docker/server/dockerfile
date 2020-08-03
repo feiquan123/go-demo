@@ -1,0 +1,27 @@
+# STEP 1 build executable binary
+FROM golang:alpine as builder
+RUN mkdir /app /app/bin
+WORKDIR /app
+ADD . .
+
+# build the binary
+RUN go env -w GOPROXY="https://goproxy.cn,direct" GO111MODULE=on
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/server cmd/server/server.go
+
+
+# STEP 2 build a small image
+# start from builder
+FROM alpine:latest as production
+RUN mkdir /lib64 &&\
+	ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2 &&\
+	echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories &&\
+	echo "http://mirrors.aliyun.com/alpine/latest-stable/community/" >> /etc/apk/repositories &&\
+	apk add tzdata &&\
+	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
+	echo "Asia/Shanghai" > /etc/timezone &&\
+	ifconfig
+
+# Copy our startic executable
+COPY --from=builder /app/bin/server . 
+EXPOSE 8082
+ENTRYPOINT ["./server"]

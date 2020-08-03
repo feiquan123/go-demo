@@ -20,7 +20,7 @@ var (
 	err    error
 	logger = log.New(os.Stdout, "", log.Lshortfile|log.LstdFlags)
 
-	serverAddress = flag.String("-s", "localhost:8888", "server ip address")
+	serverAddress = flag.String("s", "localhost:8888", "server ip address")
 	msg           string
 	conn          net.Conn
 )
